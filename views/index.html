@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>NodeJS: {{title}}</title>
+    <title>{{title}}</title>
 </head>
 <script language="javascript">
     function destroy() {
@@ -12,51 +12,26 @@
 
 <body>
     <p>
-        {% if user %}
-        {% if profile.profileImage %}
-            {% if profile.profileImage.startsWith('http') %}
-                <img src="{{profile.profileImage}}" width="100" height="100"><br>
-            {% endif %}
-        {% endif %}
-            {{profile.profileName}}님 환영합니다!<br>
-            프로필 이름: {{profile.profileName}}<br>
-            상태메시지: {{profile.statusMessage}}<br>
-            성별: {{profile.gender}}
-            <form id="form" action="http://localhost:{{port}}/user/delete" method="get">
-                <button type="submit" onclick=destroy()>회원탈퇴</button>
-                <button type = "button" onclick="location.href='http://localhost:{{port}}/user/logout'">로그아웃</button>
-                <button type = "button" onclick="location.href='http://localhost:{{port}}/user/info'">유저정보조회</button>
-            </form>
-            <br>
-            <form id="form" action="http://localhost:{{port}}/profile/update" method="get">
-                <button style="height:40px;width: 157px" type="submit">프로필 관리</button>
-            </form>
-            <br>
-            <form id="form" action="http://localhost:{{port}}/refrigerator" method="get">
-                <button style="height:40px;width: 157px" type="submit">냉장고 관리</button>
-            </form>    
-        {% else %}
-        
-            <form id="form" action="/user/login" method="post">
-                일반 로그인 <br>
-                <input style = "width: 150px" type="text" name="username" placeholder="ID" required/><br>
-                <input style = "width: 150px" type="text" name="password" placeholder="Password" required/><br>
-                <button style = "width: 157px" type="submit">로그인</button><br><br>
-            </form>
-            
-            <form id="form" action="http://localhost:{{port}}/user/kakao" method="get">
-                <button style="width: 157px" type="submit">카카오톡으로 로그인</button><br>
-            </form>
+    <h1>푸켓의 모든 것</h1>
 
-            <br>
-            <form id="form" action="http://localhost:{{port}}/user/sign-up" method="get">
-                <button style="width: 157px" type="submit">회원가입</button><br>
-            </form>
-        {% endif %}
-    </p>
-
-    <p>
-
+    <table border="1">
+        <tr>
+            <th>푸켓 위치</th>
+            <th>가는 방법</th>
+            <th>숙소</th>
+            <th>관광지</th>
+            <th>맛집</th>
+            <th>경비</th>
+        </tr>
+        <tr>
+            <th>푸켓 위치</th>
+            <th>가는 방법</th>
+            <th>숙소</th>
+            <th>관광지</th>
+            <th>맛집</th>
+            <th>경비</th>
+        </tr>
+    </table>
     </p>
 </body>
 
