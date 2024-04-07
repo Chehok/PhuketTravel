@@ -3,42 +3,60 @@
 
 <head>
     <title>{{title}}</title>
+
+    <style>
+        .wrap {
+            max-width: 1300px;
+            min-width: 500px;
+            margin: 0 auto;
+            font-size: 22px;
+        }
+
+        .menu {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        .menu_item {
+            display: table-cell;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        img {
+            width:"25%";
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+    </style>
 </head>
-<script language="javascript">
-    function destroy() {
-        alert('탈퇴 되었습니다.');
-    }
-</script>
 
 <body>
     <div>
         <h1>푸켓의 모든 것</h1>
     </div>
 
-    <div>
-        <table border="1">
-            <tr>
-                <th>푸켓 위치</th>
-                <th>가는 방법</th>
-                <th>숙소</th>
-                <th>관광지</th>
-                <th>맛집</th>
-                <th><a href="http://www.naver.com">네이버</a></th>
-            </tr>
-            <tr>
-                <td>푸켓 위치</td>
-                <td>가는 방법</td>
-                <td>숙소</td>
-                <td>관광지</td>
-                <td>맛집</td>
-                <td>경비</td>
+    <div class="wrap">
+        <table class="menu" border="1">
+            <tr class="table_cell">
+                <th class="menu_item">푸켓 위치</th>
+                <th class="menu_item">가는 방법</th>
+                <th class="menu_item">숙소</th>
+                <th class="menu_item">관광지</th>
+                <th class="menu_item">맛집</th>
+                <th class="menu_item"><a href="http://www.naver.com">경비</a></th>
             </tr>
         </table>
     </div>
 
     <div>
-        <img src="./../images/mainPage.png" width="300">
-        <img src="https://image.beansdrawer.com/short-hair/mackerel/n00-08.jpg">
+        <img src="">
+        <img src="https://mblogthumb-phinf.pstatic.net/20160717_130/yyy_nnn_1468759927055BBmag_JPEG/%C0%CC%B9%CC%C1%F6_1.jpg?type=w800">
     </div>
 </body>
 
