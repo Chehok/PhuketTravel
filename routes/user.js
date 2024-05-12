@@ -1,41 +1,45 @@
 const express = require('express');
-const User = require('../models/tourist');
+const User = require('../models/user');
+const passport = require('passport');
+const bcrypt = require('bcrypt')
 
 // /user
 const router = express.Router();
 
 // 회원가입
 // /user/sign-up
-// router.route('/sign-up')
-//     .get((_, res) => {
-//         res.render('sign-up', {
-//             title: require('../package.json').name,
-//             port: process.env.PORT
-//         });
-//     })
-//     .post(async (req, res, next) => {
-//         const { id, password, name } = req.body;
-//         if (!id) return next('아이디를 입력하세요.');
-//         if (!password) return next('비밀번호를 입력하세요.');
+router.route('/sign-up')
+    .get((_, res) => {
+        res.render('sign-up', {
+            title: require('../package.json').name,
+            port: process.env.PORT
+        });
+    })
+    .post(async (req, res, next) => {
+        const { id, password, name, nickName } = req.body;
+        if (!id) return next('아이디를 입력하세요.');
+        if (!password) return next('비밀번호를 입력하세요.');
 
-//         const user = await User.findOne({ where: { id } });
-//         if (user) return next('이미 등록된 사용자 아이디입니다.');
+        const user = await User.findOne({ where: { id } });
+        if (user) return next('이미 등록된 사용자 아이디입니다.');
 
-//         try {
-//             const hash = await bcrypt.hash(password, 12);
-//             const user = await User.create({
-//                 id,
-//                 password: hash,
-//                 name
-//             });
+        try {
+            const hash = await bcrypt.hash(password, 12);
+            const user = await User.create({
+                id,
+                password: hash,
+                name,
+                nickName,
+                admin: 0
+            });
 
-//             if (user) res.redirect(`/profile/create/${user.userId}`);
-//             else next('회원가입이 되지 않았습니다!');       
-//         } catch (err) {
-//             console.error(err);
-//             next(err);
-//         }
-//     });
+            // if (user) res.redirect(`/profile/create/${user.userId}`);
+            // else next('회원가입이 되지 않았습니다!');       
+        } catch (err) {
+            console.error(err);
+            next(err);
+        }
+    });
 
 router.get('/', (_, res) => {
     res.render('login', {
@@ -51,7 +55,10 @@ router.post('/login', (req, res, next) => {
     // 로컬 전략을 실행하다라는 의미 => passport/index.js를 호출한 후, local()을 호출하여 passport/local.js를 호출한다.
     passport.authenticate('local', (authError, user, info) => {
         if (user) req.login(user, loginError => res.redirect('/'));
-        else next(info);
+        else  {
+            // alert('아이디 혹은 비밀번호가 틀렸습니다.')  
+            next(info);
+        }
     })(req, res, next);
 });
 

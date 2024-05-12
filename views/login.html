@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Document</title>
+    <title>{{title}}</title>
 </head>
 <body>
     <div>
@@ -8,14 +8,21 @@
     </div>
     <div class="login-wrapper">
         <h2>Login</h2>
-        <form method="post" action="/login" id="login-form">
-            <input type="text" name="id" placeholder="ID">
-            <input type="password" name="password" placeholder="Password">
+        <form method="post" action="/user/login" id="form">
+            <input type="text" name="username" placeholder="ID" required>
+            <input type="password" name="password" placeholder="Password" required>
             <label for="remember-check">
                 <input type="checkbox" id="remember-check">아이디 저장하기
             </label>
-            <input type="submit" value="Login">
+            <button type="submit">로그인</button>
         </form>
+
+        <br>
+
+        <form id="form" action="http://localhost:{{port}}/user/sign-up" method="get">
+            <button type="submit">회원가입</button><br>
+        </form>
+
     </div>
 </body>
 </html>
