@@ -27,25 +27,26 @@
         }
 
         img {
-            width:"25%";
+            width: "25%";
             margin-left: auto;
             margin-right: auto;
             display: block;
         }
-
     </style>
 </head>
 
 <body>
-    {% if user %}
-    로그인 됨
-    {% endif %}
     <div>
         <h1><a href="/">푸켓의 모든 것</a></h1>
     </div>
 
+
     <div>
+        {% if user %}
+        <a href="/user/logout">로그아웃</a>
+        {% else %}
         <a href="/user">로그인</a>
+        {% endif %}
     </div>
 
     <div class="wrap">
@@ -64,7 +65,8 @@
 
     <div>
         <img src="">
-        <img src="https://mblogthumb-phinf.pstatic.net/20160717_130/yyy_nnn_1468759927055BBmag_JPEG/%C0%CC%B9%CC%C1%F6_1.jpg?type=w800">
+        <img
+            src="https://mblogthumb-phinf.pstatic.net/20160717_130/yyy_nnn_1468759927055BBmag_JPEG/%C0%CC%B9%CC%C1%F6_1.jpg?type=w800">
     </div>
 </body>
 
