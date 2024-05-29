@@ -12,9 +12,8 @@ const session = require('express-session');
 const nunjucks = require('nunjucks');
 const { sequelize, Tourist } = require('./models');
 
-
 const userRouter = require('./routes/user');
-const transportationRouter = require('./routes/transportation');
+const transportRouter = require('./routes/transport');
 
 dotenv.config(); // .env 파일을 읽어서 process.env로 만든다. (dotenv => dot(.) + env) 비밀 키들을 관리하기 위함.
 passportConfig(); // 초기 세팅 1
@@ -65,7 +64,7 @@ app.use(passport.session()); // 세션 객체에 유저정보를 저장해주는
 
 // 각 주소에 해당하는 라우터로 넘김
 app.use('/user', userRouter);
-app.use('/transportation', transportationRouter);
+app.use('/transport', transportRouter);
 
 app.use(async (req, res, next) => {
     // try {

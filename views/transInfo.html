@@ -36,11 +36,20 @@
     <div>
         <h1><a href="/">푸켓의 모든 것</a></h1>
     </div>
+
+    <div>
+        {% if user %}
+        <a href="/user/logout">로그아웃</a>
+        {% else %}
+        <a href="/user">로그인</a>
+        {% endif %}
+    </div>
+    
     <div class="wrap">
         <table class="menu" border="1">
             <tr class="table_cell">
                 <th class="menu_item"><a href="#map">푸켓 위치</a></th>
-                <th class="menu_item"><a href="/transportation/info">가는 방법</a></th>
+                <th class="menu_item"><a href="/transport/info">가는 방법</a></th>
                 <th class="menu_item"><a href="#">숙소</a></th>
                 <th class="menu_item"><a href="#main">관광지</a></th>
                 <th class="menu_item"><a href="#main">맛집</a></th>
@@ -48,6 +57,13 @@
             </tr>
         </table>
     </div>
+
+    <div>
+        {% if user %}
+        <a href="/transport/post">게시글 작성</a>
+        {% endif %}
+    </div>
+
 </body>
 
 </html>
