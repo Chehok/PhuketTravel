@@ -16,7 +16,7 @@ router.route('/info')
 router.route('/post')
     .get((req, res) => {
         res.render('postTransInfo', {
-            user: req.user,
+            user: req.user, // 로그인 기능 추가
             title: require('../package.json').name,
             port: process.env.PORT
         });
