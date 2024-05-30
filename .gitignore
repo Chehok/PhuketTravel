@@ -1,6 +1,9 @@
 # AWS
 config.json
 
+# MAC
+.DS_Store
+
 # Logs
 logs
 *.log

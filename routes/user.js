@@ -31,10 +31,7 @@ router.route('/sign-up')
                 name,
                 nickName,
                 admin: 0
-            });
-
-            // if (user) res.redirect(`/profile/create/${user.userId}`);
-            // else next('회원가입이 되지 않았습니다!');       
+            });    
         } catch (err) {
             console.error(err);
             next(err);

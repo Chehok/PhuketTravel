@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>{{title}}</title>
 
     <style>
@@ -26,30 +27,59 @@
             text-align: center;
         }
 
-        img {
+        #menu a {  
+            text-align: center;  
+            text-decoration: none; /* 링크의 밑줄 제거 */  
+            color: inherit; /* 링크의 색상 제거 */
+            font-size: large;
+        }
+
+        /* img {
             width: "25%";
             margin-left: auto;
             margin-right: auto;
             display: block;
-        }
+        } */
     </style>
 </head>
 
 <body>
     <div>
-        <h1><a href="/">푸켓의 모든 것</a></h1>
-    </div>
+        <img style="float: left;" src="mainPage/Phuket_Logo.png" width="50" height="50">
 
-
-    <div>
         {% if user %}
-        <a href="/user/logout">로그아웃</a>
+        <a style="float: right;" href="/user/logout">로그아웃</a>
         {% else %}
-        <a href="/user">로그인</a>
+        <a style="float: right;" href="/user">로그인</a>
         {% endif %}
+
+        <h1><a href="/">푸켓을 잡다 Phuketch</a></h1>
     </div>
 
-    <div class="wrap">
+    <div style="display:inline-block;vertical-align:top;">
+        <img src="mainPage/main.png" width="100%">
+    </div>
+
+    <table id="menu" style="margin-left:auto;margin-right:auto;width: 50%;">
+        <tr>
+            <td>
+                <h2>Menu</h2>
+                <li><a href="/">푸켓 위치</a></li><br>
+                <li><a href="/">항공편</a></li><br>
+                <li><a href="/">관광지</a></li><br>
+                <li><a href="/">음식</a></li><br>
+                <li><a href="/">준비사항</a></li><br>
+                <li><a href="/">기타사항</a></li><br>
+                <li><a href="/">숙소</a></li><br>
+            </td>
+            <td>
+                <h1>달력</h1>
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- <div class="wrap">
         <table class="menu" border="1">
             <tr class="table_cell">
                 <th class="menu_item"><a href="/">푸켓 위치</a></th>
@@ -64,10 +94,9 @@
     </div>
 
     <div>
-        <img src="">
         <img
             src="https://mblogthumb-phinf.pstatic.net/20160717_130/yyy_nnn_1468759927055BBmag_JPEG/%C0%CC%B9%CC%C1%F6_1.jpg?type=w800">
-    </div>
+    </div> -->
 </body>
 
 </html>
