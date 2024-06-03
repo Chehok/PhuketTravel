@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+
+  <style>
+    .wrap {
+      max-width: 1300px;
+      min-width: 500px;
+      margin: 0 auto;
+      font-size: 22px;
+    }
+
+    .menu {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    .menu_item {
+      display: table-cell;
+      vertical-align:bottom;
+      text-align: center;
+    }
+
+    .menu_item img {
+      width: 100%;
+      height: 100%;
+      max-width: 150px;
+      max-height: 180px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      /* 링크의 밑줄 제거 */
+      color: inherit;
+      /* 링크의 색상 제거 */
+    }
+
+    th {
+      padding: 0 30px;
+    }
+
+    .content {
+      /* margin-left: auto;
+      margin-right: auto; */
+      margin: 0 auto;
+      width: 80%;
+      table-layout: fixed;
+      display: table;
+    }
+
+    .content img {
+      width: 70%;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <a href="/"><img style="float: left;" src="/mainPage/Phuket_Logo.png" width="50" height="50"></a>
+
+    {% if user %}
+    <a style="float: right;" href="/user/logout">로그아웃</a>
+    {% else %}
+    <a style="float: right;" href="/user">로그인</a>
+    {% endif %}
+
+    <h1>푸켓 위치</h1>
+  </div>
+
+  <div class="wrap">
+    <table class="menu" border="0">
+      <tr class="table_cell">
+        <th class="menu_item"><a href="/phuketLocation/info">
+          <img style="float: left;" src="/topBar/phuketLocation.png" width="50" height="50"><br><br>푸켓 위치</a></th>
+        <th class="menu_item"><a href="/transport/info"><img style="float: left;" src="/topBar/transport.png" width="50"
+              height="50"><br><br>항공편</a></th>
+        <th class="menu_item"><a href="/"><img style="float: left;" src="/topBar/accommodation.png" width="50"
+              height="50"><br><br>숙소</a></th>
+        <th class="menu_item"><a href="/"><img style="float: left;" src="/topBar/tourist.png" width="50"
+              height="50"><br><br>관광지</a></th>
+        <th class="menu_item"><a href="/"><img style="float: left;" src="/topBar/food.png" width="50"
+              height="50"><br><br>음식</a></th>
+        <th class="menu_item"><a href="/"><img style="float: left;" src="/topBar/preparation.png" width="50"
+              height="50"><br><br>준비 사항</a></th>
+        <th class="menu_item"><a href="/"><img style="float: left;" src="/topBar/etc.png" width="50"
+              height="50"><br><br>기타 사항</a></th>
+      </tr>
+    </table>
+  </div>
+
+  <div class="content">
+    <table>
+      <tr>
+        <td>
+          푸켓은 태국내의 남쪽에 위치하고 있으며<br>
+          공항을 따로 갖고있어 직항 및 경유를 이용하여<br>
+          푸켓섬으로 바로 이동이 가능하다.<br><br>
+
+          눈부신 해변과 아름다운 자영환경으로<br>
+          아시아의 진주라고 불리며 태국에서 가장 큰<br>
+          섬이자 태국을 대표하는 관광지 중 한곳이다.<br><br>
+
+          우기와 건기에 따라 바다색깔이 달라지기 때문에<br>
+          기상상황을 잘 확인해야 한다.<br><br>
+
+          푸켓은 11월 부터 2월까지가<br>
+          가장 아름다운 해변을 볼 수 있는 시기이다.<br><br>
+        </td>
+        <td><img src="/map.jpg"></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
