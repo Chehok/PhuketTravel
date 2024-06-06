@@ -68,7 +68,7 @@
 
   <table id="menu">
     <tr>
-      <td id="tableText" style="width: 25%;">
+      <td id="tableText" style="width: 35%; text-align: center;">
         <br>
         <h2>Menu</h2>
         <li><a href="/phuketLocation/info">푸켓 위치</a></li><br>
@@ -79,7 +79,7 @@
         <li><a href="/">기타사항</a></li><br>
         <li><a href="/">숙소</a></li><br>
       </td>
-      <td>
+      <td style="width: 100px">
         <h1>달력</h1>
         <div id='calendar-container'>
           <div id='calendar'></div>
@@ -99,7 +99,8 @@
         // calendar element 취득      
         var calendarEl = $('#calendar')[0];      // full-calendar 생성하기      
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          height: '700px', // calendar 높이 설정        
+          height: '550px', // calendar 높이 설정
+          width: '100px',        
           expandRows: true, // 화면에 맞게 높이 재설정        
           slotMinTime: '08:00', // Day 캘린더에서 시작 시간       
           slotMaxTime: '20:00', // Day 캘린더에서 종료 시간        // 해더에 표시할 툴바        
