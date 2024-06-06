@@ -14,8 +14,7 @@ const nunjucks = require('nunjucks');
 const { sequelize, Tourist } = require('./models');
 
 const userRouter = require('./routes/user');
-const transportRouter = require('./routes/transport');
-const phuketLocationRouter = require('./routes/phuketLocation');
+const menuRouter = require('./routes/menu');
 
 dotenv.config(); // .env 파일을 읽어서 process.env로 만든다. (dotenv => dot(.) + env) 비밀 키들을 관리하기 위함.
 passportConfig(); // 초기 세팅 1
@@ -46,6 +45,7 @@ app.use(
     morgan('dev'), // 서버에 들어온 응답과 요청을 기록해주는 미들웨어, 기록 후 next 호출
     // express.static(path.join(__dirname, 'public')), // 요청하는 파일이 있을 때 파일 경로를 제공하며, localhost:5000/ 에 접속하면 public으로 경로를 바꿔줌
     express.static(path.join(__dirname, 'images')), // 요청하는 파일이 있을 때 파일 경로를 제공하며, localhost:5000/ 에 접속하면 images 로 경로를 바꿔줌
+    express.static(path.join(__dirname, 'css')), // 요청하는 파일이 있을 때 파일 경로를 제공하며, localhost:5000/ 에 접속하면 images 로 경로를 바꿔줌
     // express.static('images'),
     favicon(path.join(__dirname, 'images', 'favicon.ico')),
     express.json(), // put이나 patch, post 요청 시에 req.body에 프런트에서 온 데이터를 넣어줌
@@ -72,8 +72,7 @@ app.use(passport.session()); // 세션 객체에 유저정보를 저장해주는
 
 // 각 주소에 해당하는 라우터로 넘김
 app.use('/user', userRouter);
-app.use('/transport', transportRouter);
-app.use('/phuketLocation', phuketLocationRouter);
+app.use('/menu', menuRouter);
 
 app.use(async (req, res, next) => {
     // try {

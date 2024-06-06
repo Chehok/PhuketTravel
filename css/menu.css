@@ -1,0 +1,60 @@
+
+.wrap {
+    max-width: 1300px;
+    min-width: 500px;
+    margin: 0 auto;
+    font-size: 22px;
+  }
+
+  .menu {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .menu_item {
+    display: table-cell;
+    vertical-align:bottom;
+    text-align: center;
+  }
+
+  .menu_item img {
+    width: 100%;
+    height: 100%;
+    max-width: 150px;
+    max-height: 180px;
+  }
+
+  .menu a {
+    text-decoration: none;
+    /* 링크의 밑줄 제거 */
+    color: inherit;
+    /* 링크의 색상 제거 */
+  }
+
+  th {
+    padding: 0 30px;
+  }
+
+  .content {
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 0 auto;
+    width: 80%;
+    table-layout: fixed;
+    display: table;
+  }
+
+  .content img {
+    width: 100%;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .sentence {
+    text-align: center;
+    font-size:22px;
+  }
