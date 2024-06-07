@@ -1,36 +1,28 @@
 const Sequelize = require('sequelize');
 
 // 관광지
-module.exports = class Tourist extends Sequelize.Model {
+module.exports = class Board extends Sequelize.Model {
     static init(sequelize) {
         return super.init({
-            tourId: {
+            boardId: {
                 type: Sequelize.BIGINT,
                 autoIncrement: true,
                 primaryKey: true
             },
-            name: {
+            title: {
                 type: Sequelize.STRING(100),
                 allowNull: false
             },
-            desc: {
+            contents: {
                 type: Sequelize.TEXT,
                 allowNull: true
-            },
-            imgLink: {
-                type: Sequelize.TEXT,
-                allowNull: true
-            },
-            expCost: { // expectedCost - 예상비용
-                type: Sequelize.STRING(20),
-                allowNull: false
             }
         }, {
             sequelize,
-            timestamps: false,  // true => createAt, updateAt 컬럼을 자동으로 생성
+            timestamps: true,  // true => createAt, updateAt 컬럼을 자동으로 생성
             underscored: false, // true => 스네이크케이스, false => 카멜케이스
-            modelName: 'Tourist',  // 모델 이름 => sequelize 쿼리문에서 사용됨.
-            tableName: 'tourist', // 테이블 이름 => mysql에 생성 되는 테이블 이름, db에 접근할 때 사용.
+            modelName: 'Board',  // 모델 이름 => sequelize 쿼리문에서 사용됨.
+            tableName: 'board', // 테이블 이름 => mysql에 생성 되는 테이블 이름, db에 접근할 때 사용.
             paranoid: false,    // true => deleteAt 컬럼을 만듬
             charset: 'utf8mb4', // utf8, mb4는 이모티콘을 넣어야 할때
             collate: 'utf8mb4_general_ci',

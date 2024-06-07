@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+  
+    <link rel="stylesheet" href="/menu.css">
+</head>
+<body>
+  <div>
+    <a href="/"><img style="float: left;" src="/images/mainPage/Phuket_Logo.png" width="50" height="50"></a>
+
+    {% if user %}
+    <a style="float: right;" href="/user/logout">로그아웃</a><br>
+    <a style="float: right;" href="/transport/post">게시글 작성</a>
+    {% else %}
+    <a style="float: right;" href="/user">로그인</a>
+    {% endif %}
+
+    <h1>{{board.title}}</h1>
+  </div>
+
+  <br><br>
+
+  <a href="/menu/board">뒤로 가기</a>
+
+  <br><br>
+
+  <div class="sentence">
+    {{board.contents}}
+  </div>
+    
+</body>
+</html>

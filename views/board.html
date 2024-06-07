@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+  <title>{{title}}</title>
+
+  <link rel="stylesheet" href="/menu.css">
+</head>
+
+<body>
+  <div>
+    <a href="/"><img style="float: left;" src="/images/mainPage/Phuket_Logo.png" width="50" height="50"></a>
+
+    {% if user %}
+    <a style="float: right;" href="/user/logout">로그아웃</a><br>
+    <a style="float: right;" href="/transport/post">게시글 작성</a>
+    {% else %}
+    <a style="float: right;" href="/user">로그인</a>
+    {% endif %}
+
+    <h1>기타 사항</h1>
+  </div>
+
+  <div class="wrap">
+    <table class="menu" border="0">
+      <tr class="table_cell">
+        <th class="menu_item"><a href="/menu/phuketLocation">
+            <img style="float: left;" src="/images/topBar/phuketLocation.png" width="50" height="50"><br><br>푸켓 위치</a>
+        </th>
+        <th class="menu_item"><a href="/menu/transInfo"><img style="float: left;" src="/images/topBar/transport.png"
+              width="50" height="50"><br><br>항공편</a></th>
+        <th class="menu_item"><a href="/menu/accomodation"><img style="float: left;"
+              src="/images/topBar/accommodation.png" width="50" height="50"><br><br>숙소</a></th>
+        <th class="menu_item"><a href="/menu/tourist"><img style="float: left;" src="/images/topBar/tourist.png"
+              width="50" height="50"><br><br>관광지</a></th>
+        <th class="menu_item"><a href="/menu/food"><img style="float: left;" src="/images/topBar/food.png" width="50"
+              height="50"><br><br>음식</a></th>
+        <th class="menu_item"><a href="/menu/preparation"><img style="float: left;" src="/images/topBar/preparation.png"
+              width="50" height="50"><br><br>준비 사항</a></th>
+        <th class="menu_item"><a href="/menu/board"><img style="float: left;" src="/images/topBar/board.png" width="50"
+              height="50"><br><br>기타 사항</a></th>
+      </tr>
+    </table>
+  </div>
+
+  <br><br>
+
+  <div class="sentence">
+    <table border="1" style="width: 100%; text-align: center;">
+      <tr>
+        <th>번호</th>
+        <th style="width: 70%;">제목</th>
+        <th>작성일</th>
+      </tr>
+      {% for board in boards %}
+      <tr>
+        <td>{{board.boardId}}</td>
+        <td>
+          <a href="/menu/board/{{board.boardId}}">{{board.title}}</a>
+        </td>
+        <td>{{board.createdAt}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+
+</html>

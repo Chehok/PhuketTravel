@@ -5,7 +5,7 @@
 // const router = express.Router();
 
 // router.route('/info')
-//     .get((req, res) => {
+//     .get((req, res, next) => {
 //         res.render('transInfo', {
 //             user: req.user,
 //             title: require('../package.json').name,
@@ -14,7 +14,7 @@
 //     })
 
 // router.route('/post')
-//     .get((req, res) => {
+//     .get((req, res, next) => {
 //         res.render('postTransInfo', {
 //             user: req.user, // 로그인 기능 추가
 //             title: require('../package.json').name,
