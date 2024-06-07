@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<head>
+    <title>{{title}}</title>
+
+    <link rel="stylesheet" href="/menu.css">
+</head>
+
+<body>
+    <div>
+        <a href="/"><img style="float: left;" src="/images/mainPage/Phuket_Logo.png" width="50" height="50"></a>
+
+        {% if user %}
+        <a style="float: right;" href="/user/logout">로그아웃</a><br>
+        <a style="float: right;" href="/transport/post">게시글 작성</a>
+        {% else %}
+        <a style="float: right;" href="/user">로그인</a>
+        {% endif %}
+
+        <h1>숙소</h1>
+    </div>
+
+    <div class="wrap">
+        <table class="menu" border="0">
+          <tr class="table_cell">
+            <th class="menu_item"><a href="/menu/phuketLocation">
+              <img style="float: left;" src="/images/topBar/phuketLocation.png" width="50" height="50"><br><br>푸켓 위치</a></th>
+            <th class="menu_item"><a href="/menu/transInfo"><img style="float: left;" src="/images/topBar/transport.png" width="50"
+                  height="50"><br><br>항공편</a></th>
+            <th class="menu_item"><a href="/menu/accomodation"><img style="float: left;" src="/images/topBar/accommodation.png" width="50"
+                  height="50"><br><br>숙소</a></th>
+            <th class="menu_item"><a href="/menu/tourist"><img style="float: left;" src="/images/topBar/tourist.png" width="50"
+                  height="50"><br><br>관광지</a></th>
+            <th class="menu_item"><a href="/menu/food"><img style="float: left;" src="/images/topBar/food.png" width="50"
+                  height="50"><br><br>음식</a></th>
+            <th class="menu_item"><a href="/menu/preparation"><img style="float: left;" src="/images/topBar/preparation.png" width="50"
+                  height="50"><br><br>준비 사항</a></th>
+            <th class="menu_item"><a href="/menu/"><img style="float: left;" src="/images/topBar/etc.png" width="50"
+                  height="50"><br><br>기타 사항</a></th>
+          </tr>
+        </table>
+    </div>
+
+    <br><br>
+
+    <div class="sentence">
+        <p>
+            숙소또한 가격이 중요한데 숙소의 가격은 호텔부터 리조트까지 천차만별입니다.<br><br>
+
+            개개인의 취향과 여행의 목적이 다 다르기 때문에 경우에 따른 숙소를 추천해드리려고 합니다.<br><br>
+
+            태국 항공권은 저녁 늦게 도착하는 일정이기 때문에 첫날부터 좋은 숙소를 정하실 필요는 없습니다.<br>
+            저는 공항 바로 앞에있는 판푸리 라는 호텔에서 하루를 보냈고 저녁에 근처를 돌아다니며 구경도하고 저녁도 먹었습니다.<br>
+            그 다음날에 택시를 타고 리조트로 이동했구요.<br><br>
+
+            저희는 만다라바 리조트를 미리 예약하고 방문했습니다.<br>
+            1박기준 20~30만원 정도로 수영장과 연결되어있고 바로 앞에 프라이빗한 수영장 공간이 있어 가격대가 좀 높았습니다.<br>
+            다만 꼭 가격대가 있는 숙소가 아니더라도 즐기기엔 충분하다고 느꼈습니다.<br><br>
+
+            숙소예약은 아고다와 에어비앤비를 추천드립니다.<br><br>
+        </p>
+    </div>
+
+    <details style="text-align: center; font-size:22px;">
+        <summary>1. 휴양</summary>
+        <p>
+            휴양을 목적으로 온 여행이라면 숙소는 리조트로 잡는게 더 좋습니다.<br>
+            한국에 비해 리조트나 풀빌라의 가격이 훨씬 저렴하고 꼭 풀빌라가 아니더라도​<br>
+            많은 리조트가 내부를 아름답게 꾸며놓았기 때문에 취향에 맞는 리조트를 선택하시면 됩니다.<br><br>
+
+            위치로는 까론비치나 까타비치를 추천드립니다.<br><br>
+        </p>
+    </details>
+
+    <br><br>
+
+    <details style="text-align: center; font-size:22px;">
+        <summary>2. 관광</summary>
+        <p>
+            따로 설명해드릴 부분이지만 관광을 목적으로 온 여행이라면 푸켓섬 내에있는 어느 숙소든​<br>
+            상관없습니다. 거의 모든 엑티비티 및 체험프로그램은 픽업을 기본으로 하기 때문입니다.<br><br>
+        </p>
+    </details>
+
+    <br><br>
+
+    <details style="text-align: center; font-size:22px;">
+        <summary>3. 식도락</summary>
+        <p>
+            태국(푸켓)의 다양한 먹거리를 먹으러 오셨다면 동쪽에 있는 올드타운이나 까론비치와 카타비치를 추천드립니다.<br><br>
+            
+            세군데 모두 야시장으로 유명하며 길거리에서 파는 다양한 로컬푸드를 맛볼 수 있습니다.<br>
+            빠통비치에도 야시장이 있지만 유흥거리가 너무 활성화 되어있어 야시장이 크게 매력이 있진 않습니다.<br><br>
+        </p>
+    </details>
+
+    <br><br>
+
+    <details style="text-align: center; font-size:22px;">
+        <summary>4. 태국의 유흥거리</summary>
+        <p>
+            나는 놀러왔다. 사람들과 뒤엉켜 놀고싶다 하는 목적을 갖고 여행을 오셨다면 빠통비치를 추천드립니다.<br>
+            빠통비치 앞에는 방라로드라는 유흥거리가 500m정도 뻗어있는데 태국의 대표적인 유흥가 입니다.<br><br>
+
+            가족이나 연인과 같이가도 좋지만 친구들과 가게된다면 더 재밌게 놀 수 있는 곳입니다.<br>
+            애기와 함께가는것은 추천드리지 않습니다.<br><br>
+        </p>
+    </details>
+
+    <br><br>
+
+    <details style="text-align: center; font-size:22px;">
+        <summary>5. 금액대</summary>
+        <p>
+            리조트:<br>
+                기본 룸 70,000 ~ 200,000<br>
+                억세스 룸 200,000 ~ 400,000<br>
+                풀빌라 300,000 ~ 600,000<br><br>
+            호텔: 30,000 ~ ??<br><br>
+        </p>
+    </details>
+
+    <br><br>
+
+    <details style="text-align: center; font-size:22px;">
+        <summary>6. 해피아워 및 픽업</summary>
+        <p>
+            각 호텔마다 해피아워 라는 시간이 있는데 레스토랑이나 바에서 식음료를 할인해주는 시간을 의미합니다.<br>
+            보통 5시에 시작하여 7시까지 2시간정도 하는 것 같습니다. 이 부분도 체크하셔서 꼭 이용해보세요.<br><br>
+
+            픽업을 해주는 숙소가 있고 안해주는 숙소가 있는데 호텔같은 경우 대부분 픽업을 해주면서<br>
+            리조트의 경우 픽업이 없는 경우가 많고 있다 하더라도 요금을 지불해야 합니다.<br><br>
+        </p>
+    </details>
+
+    <br><br>
+
+    <div class="wrap">
+        <table style="width: 40%; margin-left: auto; margin-right: auto;">
+            <tr class="table_cell">
+                <th class="menu_item">
+                    <img style="float: left;" src="/accomodation/agoda.png" width="50" height="50">
+                </th>
+                <th class="menu_item">
+                    <img style="float: left;" src="/accomodation/airbnb.png" width="50" height="50">
+                </th>
+            </tr>
+        </table>
+    </div>
+
+    <br><br><br><br><br><br>
+</body>
+
+</html>

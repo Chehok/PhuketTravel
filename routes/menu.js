@@ -4,55 +4,61 @@ const router = express.Router();
 
 // 푸켓 위치
 router.route('/phuketLocation')
-    .get((_, res) => {
+    .get((req, res) => {
         res.render('phuketLocation', {
             title: require('../package.json').name,
-            port: process.env.PORT
+            port: process.env.PORT,
+            user: req.user
         });
     })
 
 // 항공편
 router.route('/transInfo')
-    .get((_, res) => {
+    .get((req, res) => {
         res.render('transInfo', {
             title: require('../package.json').name,
-            port: process.env.PORT
+            port: process.env.PORT,
+            user: req.user
         });
     })
 
 // 숙소
 router.route('/accomodation')
-    .get((_, res) => {
+    .get((req, res) => {
         res.render('accomodation', {
             title: require('../package.json').name,
-            port: process.env.PORT
+            port: process.env.PORT,
+            user: req.user
         });
     })
 
 // 관광지
 router.route('/tourist')
-    .get((_, res) => {
-        res.render('transInfo', {
+    .get((req, res) => {
+        res.render('tourist', {
             title: require('../package.json').name,
-            port: process.env.PORT
+            port: process.env.PORT,
+            user: req.user
         });
     })
 
 // 음식
 router.route('/food')
-    .get((_, res) => {
-        res.render('transInfo', {
+    .get((req, res) => {
+        res.render('food', {
             title: require('../package.json').name,
-            port: process.env.PORT
+            port: process.env.PORT,
+            user: req.user
         });
     })
 
 // 준비사항
 router.route('/preparation')
-    .get((_, res) => {
-        res.render('transInfo', {
+    .get((req, res) => {
+        res.render('preparation', {
             title: require('../package.json').name,
-            port: process.env.PORT
+            port: process.env.PORT,
+            user: req.user
         });
     })
 

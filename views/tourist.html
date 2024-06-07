@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<head>
+    <title>{{title}}</title>
+
+    <link rel="stylesheet" href="/menu.css">
+</head>
+
+<body>
+    <div>
+        <a href="/"><img style="float: left;" src="/images/mainPage/Phuket_Logo.png" width="50" height="50"></a>
+
+        {% if user %}
+        <a style="float: right;" href="/user/logout">로그아웃</a><br>
+        <a style="float: right;" href="/transport/post">게시글 작성</a>
+        {% else %}
+        <a style="float: right;" href="/user">로그인</a>
+        {% endif %}
+
+        <h1>관광지</h1>
+    </div>
+
+    <div class="wrap">
+        <table class="menu" border="0">
+            <tr class="table_cell">
+                <th class="menu_item"><a href="/menu/phuketLocation">
+                        <img style="float: left;" src="/images/topBar/phuketLocation.png" width="50"
+                            height="50"><br><br>푸켓 위치</a></th>
+                <th class="menu_item"><a href="/menu/transInfo"><img style="float: left;"
+                            src="/images/topBar/transport.png" width="50" height="50"><br><br>항공편</a></th>
+                <th class="menu_item"><a href="/menu/accomodation"><img style="float: left;"
+                            src="/images/topBar/accommodation.png" width="50" height="50"><br><br>숙소</a></th>
+                <th class="menu_item"><a href="/menu/tourist"><img style="float: left;" src="/images/topBar/tourist.png"
+                            width="50" height="50"><br><br>관광지</a></th>
+                <th class="menu_item"><a href="/menu/food"><img style="float: left;" src="/images/topBar/food.png"
+                            width="50" height="50"><br><br>음식</a></th>
+                <th class="menu_item"><a href="/menu/preparation"><img style="float: left;"
+                            src="/images/topBar/preparation.png" width="50" height="50"><br><br>준비 사항</a></th>
+                <th class="menu_item"><a href="/menu/"><img style="float: left;" src="/images/topBar/etc.png" width="50"
+                            height="50"><br><br>기타 사항</a></th>
+            </tr>
+        </table>
+    </div>
+
+    <br><br>
+
+    <div class="sentence">
+        <p>
+            푸켓은 관광보다는 휴양을 목적으로 하는 여행지이기 때문에 비교적 가짓수가 많지 않습니다.<br><br>
+        <ul>
+            <li>섬투어</li>
+            <li>요트투어</li>
+            <li>엘리펀트 생츄어리 체험</li>
+        </ul>
+        제가 체험한 투어는 위 세가지이고 모두<br>
+        클룩에서 사전예약 후 진행했습니다.<br>
+        </p>
+    </div>
+
+    <details class="sentence">
+        <summary>[섬투어]</summary>
+        <p>
+            섬투어는 푸켓 근처에 있는 섬들을 요트를 타고 이동하며 구경하고<br>
+            그 섬에 내려서 사진도 찍고 중간에 스노클링하는 시간도 갖습니다.<br><br>
+
+            저는 카이섬 -> 뱀부섬 -> 마야섬 -> 피피섬 4개의 섬을 투어하는 패키지를 구매했고<br>
+            인당 약 9만원정도 지불했습니다.<br><br>
+
+            섬투어같은 경우에는 픽업이 기본적으로 포함되어있어 시간만 잘 확인하시면 큰 문제는 없습니다.<br>
+            보통 하루전에 연락이 오는데 만약에 연락이 없다면 담당연락처로 전화하시는게 답변이 가장 빠릅니다.<br><br>
+
+            인원은70명정도 큰 요트에 탑승하여 이동합니다.<br><br>
+
+            하루종일 요트를 타고 이동하는 방식이다보니 뱃멀미를 하시는분께는 절대 추천드리지 않습니다.<br>
+            요트를 타고 이동하는 시간만 4~5시간은 됩니다.<br><br>
+
+            오전 8시부터 오후5시까지 체험하는 프로그램이었고 카이섬과 뱀부섬은 크게 관광에 대한 메리트를 느끼지 못했습니다.<br>
+            다만 마야베이 섬 같은 경우에는 정말 제가 본 풍경 중에 가장 아름다운 장소였습니다.<br><br>
+
+            푸켓하면 청량한 에매랄드 빛의 바다를 떠올리시는데 상상이상의 아름다운 바다와 양쪽에 있는 섬들이 배경을 채워<br>
+            어떻게 사진을 찍어도 인생샷만 건질 수 있었습니다.<br><br>
+
+            피피섬 같은 경우에는 식사를 위해 방문하였고 다른 섬들과 달리 사람이 많기에 시장도 형성되어있고<br>
+            식당들도 많아서 구경하면서 간식거리들을 먹기에 아주 좋았습니다.<br><br>
+
+            푸켓에 방문하게 된다면 다른섬들은 모르겠지만 마야베이와 피피섬에는 한번 방문하시는 걸 추천드립니다.<br><br>
+
+            준비물 : 수영복, 방수케이스, 원피스, 썬글라스, 수건, 보조베터리, 가방(방수가방이면 좋습니다.), 원피스(사진찍을 여성분)<br>
+            여분의 현금<br><br>
+
+            <video controls width="500">
+                <source src="/videos/tourist/islandTour.mp4" type="video/mp4" />
+
+                Download the
+                <a href="/videos/tourist/islandTour.mp4">MP4</a>
+                video.
+            </video>
+
+        <dl>
+            <dt>별점</dt>
+            <dd>재미 : ★ ★ ★</dd>
+            <dd>편안함 : ★ ★</dd>
+            <dd>인생샷 : ★ ★ ★ ★</dd>
+        </dl>
+        </p>
+    </details>
+
+    <br><br>
+
+    <details class="sentence">
+        <summary>[요트체험]</summary>
+        <p>
+            요트체험은 가격대별로 천차만별입니다.<br><br>
+
+            보통 일몰을 기준으로 sunset&dinner 코스로 운용이 되며 10만원 이하의 경우 5~7팀 정도 탑승하여<br>
+            투어가 진행됩니다. 프라이빗의 경우 가격은 30만원~50만원 정도입니다.<br><br>
+
+            요트투어 또한 기본적으로 픽업이 포함되어있어 금액대에 맞춰 예약해주시면 됩니다.<br><br>
+
+            식사는 투어마다 다르게 제공됩니다.<br>
+            스테이크와 연어회 등 준비된 식사를 제공하는 곳도 있고, 뷔페처럼 제공하는 곳도 있습니다.<br>
+            보통 17시정도에 이른저녁을 먹고 일몰을 보며 샴페인과 와인을 제공합니다.<br><br>
+
+            투어는 12시쯤 시작하게 되며 2~3개정도의 섬을 투어하고 중간에 스노클링을 하는 업체도 있습니다.<br>
+            사진을 목적으로 투어를 하신다면 스노클링은 패스하기실 바랍니다.<br><br>
+
+            직원들이 이동시간에 심심하지 않도록 춤을추고 노래도 불러주며 지루하지 않게 이동할 수 있다는 점이 좋았고<br>
+            일몰을 날씨에따라 정말 풍경이 달라지기 때문에 운이 따라줘야 합니다.<br><br>
+
+            비가오게되면 사진을 찍기도 힘들고 구름이 낀다면 일몰이 제대로 보이지 않기때문에<br>
+            우기 건기에 따라 일정을 잘 조율하셔야 합니다.<br><br>
+
+            한번 해볼만한 투어라고 생각되며 요트 투어는 가격대별로 서비스가 다르기때문에<br>
+            여건이 되신다면 좋은 곳으로 예약하는것이 좋습니다.<br><br>
+
+            준비물 : 수영복, 방수케이스, 원피스(사진찍을 여성분), 썬글라스, 모자, 보조베터리(필수!)<br><br>
+            <div class="wrap">
+                <table style="width: 100%; margin-left: auto; margin-right: auto;">
+                    <tr class="table_cell">
+                        <th class="menu_item">
+                            <img style="float: center;" src="/images/tourist/yacht.jpg" width="200" height="200">
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        <dl>
+            <dt>별점</dt>
+            <dd>재미 : ★ ★ ★ ★</dd>
+            <dd>편안함 : ★ ★ ★</dd>
+            <dd>인생샷 : ★ ★ ★ ★</dd>
+        </dl>
+        </p>
+    </details>
+
+    <br><br>
+
+    <details class="sentence">
+        <summary>[엘리펀트 생츄어링 체험]</summary>
+        <p>
+            해당 투어는 서커스를 하거나 학대당한 코끼리들을 인수하여 보호하는 단체 중 하나에서 진행하며<br>
+            다른 투어와 마찬가지로 기본적으로 픽업을 포함하고 있습니다.<br><br>
+
+            오전타임, 오후타임, 풀타임 총 3종류로 나뉘어져 있고<br>
+            오전은 점심 오후는 저녁 풀타임은 점심과 저녁을 제공합니다.<br>
+            시간을 잘 확인하고 일정에 맞춰 예약하시면 됩니다.<br><br>
+
+            저는 오전타임으로 투어를 예약했고 오전 7시에 픽업차량이 리조트로 왔습니다.<br><br>
+
+            체험은 수박주기, 약밥주기(밥속에 약이 있습니다.), 진흙목욕, 샤워 순으로 진행했습니다.<br><br>
+
+            시작 전에 간단한 주의사항을 안내받고 투어를 진행했고, 수박을 주기 시작했습니다.<br>
+            저는 처음에 코끼리에게 겁을 먹어서 제대로 주지 못했는데 생각보다 얌전하여 금방 적응했습니다.<br><br>
+
+            어른코끼리는 기다릴 줄 알지만 아기코끼리는 참을성이 없어 수박바구니를 가져가 직접 먹기도 하니 주의해야합니다.<br><br>
+
+            똑같이 약밥을 주는데 약만주면 안먹고 도망가기 때문에 밥속에 약을 넣어 준다고 설명해주었습니다.<br>
+            밥에는 호박, 밥, 야채 등등이 들어있었는데 코끼리가 정신없이 먹어서 열심히 건네줘야 합니다.<br><br>
+
+            밥을 먹은 후 진흙호수로 이동하고 진흙을 발라주는 체험을 합니다. 바디워시라고 생각하면 됩니다.<br>
+            직원들이 돌아다니면서 몸에 진흙을 바르기때문에 잘 도망치셔야 합니다..<br><br>
+
+            진흙을 발라주고 진짜 호수로 이동해서 목욕체험을 하는데 생각보다 깊으니 조심하셔야 합니다.<br>
+            저는 이 때 비가 왔는데 오히려 분위기가 더 살아나서 즐겁게 체험할 수 있었습니다.<br><br>
+
+            제가 갔던 체험은 사진작가분이 계셔서 사진을 찍어 주시고 페이스북을 통해 공유해 주셔서<br>
+            이쁜 사진을 많이 건질 수 있었습니다.<br>
+            정말 별거 아닌 체험이었지만 푸켓에서 했던 체험 중 가장 재미있고 행복했습니다.<br>
+            코끼리가 먹을 때나 씻을 때나 행복해 하는게 눈에 보여서 더 크게 느꼇던 것 같습니다.<br><br>
+
+            준비물 : 수영복, 여분의 옷, 수건, 방수케이스 + 필요시 모자, 썬글라스<br><br>
+
+            가실 때 옷 안에 수영복을 입으시고 체험 후 씻은 뒤 갈아입으시는 걸 추천드립니다.<br><br>
+
+        <div class="wrap">
+            <table style="width: 100%; margin-left: auto; margin-right: auto;">
+                <tr class="table_cell">
+                    <th class="menu_item">
+                        <img style="float: left;" src="/images/tourist/elephant.png" width="50" height="50">
+                    </th>
+                    <th class="menu_item">
+                        <img style="float: left;" src="/images/tourist/couple.png" width="50" height="50">
+                    </th>
+                    <th class="menu_item">
+                        <img style="float: left;" src="/images/tourist/withElephant.png" width="50" height="50">
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <dl>
+            <dt>별점</dt>
+            <dd>재미 : ★ ★ ★ ★ ★</dd>
+            <dd>편안함 : ★ ★ ★</dd>
+            <dd>인생샷 : ★ ★ ★ ★ ★</dd>
+        </dl>
+        </p>
+    </details>
+
+    <br><br><br><br><br><br>
+</body>
+
+</html>
