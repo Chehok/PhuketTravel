@@ -13,7 +13,7 @@ module.exports = class Board extends Sequelize.Model {
                 type: Sequelize.STRING(100),
                 allowNull: false
             },
-            contents: {
+            main: {
                 type: Sequelize.TEXT,
                 allowNull: true
             }

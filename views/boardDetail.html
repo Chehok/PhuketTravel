@@ -11,7 +11,7 @@
 
     {% if user %}
     <a style="float: right;" href="/user/logout">로그아웃</a><br>
-    <a style="float: right;" href="/transport/post">게시글 작성</a>
+    <a style="float: right;" href="board/post">게시글 작성</a>
     {% else %}
     <a style="float: right;" href="/user">로그인</a>
     {% endif %}
@@ -26,7 +26,11 @@
   <br><br>
 
   <div class="sentence">
-    {{board.contents}}
+    <table border="1" style="width: 100%; min-height: 500px; vertical-align: top;">
+      <tr>
+        <td>{{board.main}}</td>
+      </tr>
+    </table>
   </div>
     
 </body>

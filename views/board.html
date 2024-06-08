@@ -12,7 +12,7 @@
 
     {% if user %}
     <a style="float: right;" href="/user/logout">로그아웃</a><br>
-    <a style="float: right;" href="/transport/post">게시글 작성</a>
+    <a style="float: right;" href="board/post">게시글 작성</a>
     {% else %}
     <a style="float: right;" href="/user">로그인</a>
     {% endif %}
@@ -47,9 +47,9 @@
   <div class="sentence">
     <table border="1" style="width: 100%; text-align: center;">
       <tr>
-        <th>번호</th>
+        <th style="width: 10%;">번호</th>
         <th style="width: 70%;">제목</th>
-        <th>작성일</th>
+        <th style="width: 20%;">작성일</th>
       </tr>
       {% for board in boards %}
       <tr>
