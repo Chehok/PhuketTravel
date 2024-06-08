@@ -33,7 +33,6 @@ module.exports = class Board extends Sequelize.Model {
     // User 객체가(users 테이블이) Comment객체를(comments 테이블을) 다수 갖고 있다.
     static associate(db) {
         // comments 테이블에 foreignKey로 제공할 users 테이블의 sourceKey: id
-        // db.User.hasMany(db.Refrigerator, { foreignKey: 'userId', sourceKey: 'userId', onDelete: 'cascade' });
-        // db.User.hasOne(db.Profile, { foreignKey: 'userId', sourceKey: 'userId', onDelete: 'cascade' });
+        db.Board.hasMany(db.Comment, { foreignKey: 'boardId', sourceKey: 'boardId', onDelete: 'cascade' });
     }
 };
