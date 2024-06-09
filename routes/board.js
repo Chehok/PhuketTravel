@@ -138,8 +138,6 @@ router.route('/update/:boardId')
                 main
             } = req.body;
 
-            console.log(req.body);
-
             await Board.update({
                 title,
                 main
@@ -147,7 +145,7 @@ router.route('/update/:boardId')
                 where: {boardId}
             })
 
-            res.redirect('/menu/board')
+            res.redirect(`/menu/board/${boardId}`)
         } catch (err) {
             console.error(err);
             next(err);

@@ -73,7 +73,7 @@ app.use(passport.session()); // 세션 객체에 유저정보를 저장해주는
 
 app.use((req, res, next) => {
     res.locals._url = req.url;
-    res.locals.user = req.user;
+    res.locals.user = req.user ? req.user.dataValues.userId : undefined;
     next();
 })
 
@@ -85,7 +85,7 @@ app.use('/menu/board', boardRouter);
 app.use(async (req, res, next) => {
     res.locals.title = require('./package.json').name;
     res.locals.port = app.get('port');
-    res.locals.user = req.user;
+    res.locals.user = req.user ? req.user.dataValues.userId : undefined;
     res.render('index');
 });
 
