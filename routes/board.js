@@ -112,6 +112,49 @@ router.route('/:boardId')
         }
     })
 
+router.route('/update/:boardId')
+    .get(isLoggedIn, async (req, res, next) => {
+        try {
+            const board = await Board.findOne({
+                where: { boardId: req.params.boardId }
+            });
+
+            res.render('updateBoard', {
+                title: require('../package.json').name,
+                port: process.env.PORT,
+                boardId: board.boardId,
+                title: board.title,
+                main: board.main
+            });
+        } catch (err) {
+            next(err);
+        }
+    })
+    .post(isLoggedIn, async (req, res, next) => {
+        try {
+            const {
+                boardId,
+                title,
+                main
+            } = req.body;
+
+            console.log(req.body);
+
+            await Board.update({
+                title,
+                main
+            },{
+                where: {boardId}
+            })
+
+            res.redirect('/menu/board')
+        } catch (err) {
+            console.error(err);
+            next(err);
+        }
+    });
+
+
 router.route('/comment/:boardId')
     .post(async (req, res, next) => {
         try {

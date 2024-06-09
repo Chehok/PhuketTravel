@@ -4,7 +4,6 @@
 <head>
     <title>{{title}}</title>
 
-
     <link rel="stylesheet" href="/menu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +12,7 @@
 
 <body>
     <div class="custom-font">
-        <h1>게시글 작성</h1>
+        <h1>게시글 수정</h1>
 
         <div class="sentence">
             <form action="/menu/board" method="get">
@@ -25,9 +24,10 @@
 
         <div class="board">
             <form action="" method="post">
-                <input style="width:100%; height: 30px;" type="text" name="title" placeholder="제목" required /><br><br>
-                <input style="width:100%; height:300px" type="text" name="main" placeholder="본문" /><br><br>
-                <button style="width:200px" type="submit">게시글 등록</button>
+                <input type="hidden" value="{{boardId}}" name="boardId">
+                <input style="width:100%; height: 30px;" type="text" name="title" placeholder="제목" value="{{title}}" required /><br><br>
+                <input style="width:100%; height:300px" type="text" name="main" placeholder="본문" value="{{main}}" /><br><br>
+                <button style="width:200px" type="submit">게시글 수정</button>
             </form>
         </div>
     </div>
