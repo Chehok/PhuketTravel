@@ -37,6 +37,9 @@
   }
 
   .content {
+    font-family: "Single Day", cursive;
+    font-weight: 400;
+    font-style: normal;
     /* margin-left: auto;
     margin-right: auto; */
     margin: 0 auto;
@@ -55,15 +58,25 @@
   }
 
   .sentence {
+    font-family: "Single Day", cursive;
+    font-weight: 400;
+    font-style: normal;
     text-align: left;
     margin-left: 100px;
     margin-right: 100px;
-    font-size:21px;
+    font-size:24px;
   }
 
   .board {
     text-align: left;
     margin-left: 100px;
     margin-right: 100px;
-    font-size:21px;
+    font-size:24px;
+  }
+
+
+  .custom-font {
+    font-family: "Single Day", cursive;
+    font-weight: 400;
+    font-style: normal;
   }
