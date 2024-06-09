@@ -4,7 +4,7 @@
 <head>
   <title>{{title}}</title>
 
-  
+
   <link rel="stylesheet" href="/menu.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,94 +12,97 @@
 </head>
 
 <body>
-  <div>
-    <a href="/"><img style="float: left;" src="/images/mainPage/Phuket_Logo.png" width="50" height="50"></a>
+  <div class="custom-font">
+    <div>
+      <a href="/"><img style="float: left;" src="/images/mainPage/Phuket_Logo.png" width="50" height="50"></a>
 
-    {% if user %}
-    <form action="/user/logout" method="post">
-      <input name="url" type="hidden" value="{{_url}}">
-      <button style="width: 120px; float: right;" type="submit">로그아웃</button>
-    </form>
-    {% else %}
-    <form action="/user" method="post">
-      <input name="_url" type="hidden" value="{{_url}}">
-      <button style="width: 120px; float: right;" type="submit">로그인</button>
-    </form>
-    {% endif %}
+      {% if user %}
+      <form action="/user/logout" method="post">
+        <input name="url" type="hidden" value="{{_url}}">
+        <button style="width: 120px; float: right;" type="submit">로그아웃</button>
+      </form>
+      {% else %}
+      <form action="/user" method="post">
+        <input name="_url" type="hidden" value="{{_url}}">
+        <button style="width: 120px; float: right;" type="submit">로그인</button>
+      </form>
+      {% endif %}
 
-    <h1>푸켓 위치</h1>
-  </div>
+      <h1>푸켓 위치</h1>
+    </div>
 
-  <div class="wrap">
+    <div class="wrap">
       <table class="menu" border="0">
         <tr class="table_cell">
           <th class="menu_item"><a href="/menu/phuketLocation">
-            <img style="float: left;" src="/images/topBar/phuketLocation.png" width="50" height="50"><br><br>푸켓 위치</a></th>
-          <th class="menu_item"><a href="/menu/transInfo"><img style="float: left;" src="/images/topBar/transport.png" width="50"
-                height="50"><br><br>항공편</a></th>
-          <th class="menu_item"><a href="/menu/accomodation"><img style="float: left;" src="/images/topBar/accommodation.png" width="50"
-                height="50"><br><br>숙소</a></th>
-          <th class="menu_item"><a href="/menu/tourist"><img style="float: left;" src="/images/topBar/tourist.png" width="50"
-                height="50"><br><br>관광지</a></th>
+              <img style="float: left;" src="/images/topBar/phuketLocation.png" width="50" height="50"><br><br>푸켓 위치</a>
+          </th>
+          <th class="menu_item"><a href="/menu/transInfo"><img style="float: left;" src="/images/topBar/transport.png"
+                width="50" height="50"><br><br>항공편</a></th>
+          <th class="menu_item"><a href="/menu/accomodation"><img style="float: left;"
+                src="/images/topBar/accommodation.png" width="50" height="50"><br><br>숙소</a></th>
+          <th class="menu_item"><a href="/menu/tourist"><img style="float: left;" src="/images/topBar/tourist.png"
+                width="50" height="50"><br><br>관광지</a></th>
           <th class="menu_item"><a href="/menu/food"><img style="float: left;" src="/images/topBar/food.png" width="50"
                 height="50"><br><br>음식</a></th>
-          <th class="menu_item"><a href="/menu/preparation"><img style="float: left;" src="/images/topBar/preparation.png" width="50"
-                height="50"><br><br>준비 사항</a></th>
-          <th class="menu_item"><a href="/menu/board"><img style="float: left;" src="/images/topBar/board.png" width="50"
-                height="50"><br><br>기타 사항</a></th>
+          <th class="menu_item"><a href="/menu/preparation"><img style="float: left;"
+                src="/images/topBar/preparation.png" width="50" height="50"><br><br>준비 사항</a></th>
+          <th class="menu_item"><a href="/menu/board"><img style="float: left;" src="/images/topBar/board.png"
+                width="50" height="50"><br><br>기타 사항</a></th>
         </tr>
       </table>
-  </div>
+    </div>
 
-  <br><br>
+    <br><br>
 
-  <div class="content custom-font">
-    <table border="0" >
-      <tr>
-        <td class="single-day-regular" style="width: 45%; text-align: left; font-size:24px;">
-          푸켓은 태국내의 남쪽에 위치하고 있으며<br>
-          공항을 따로 갖고있어 직항 및 경유를 이용하여<br>
-          푸켓섬으로 바로 이동이 가능하다.<br><br>
+    <div class="content">
+      <table border="0">
+        <tr>
+          <td style="width: 45%; text-align: left; font-size:24px;">
+            푸켓은 태국내의 남쪽에 위치하고 있으며<br>
+            공항을 따로 갖고있어 직항 및 경유를 이용하여<br>
+            푸켓섬으로 바로 이동이 가능하다.<br><br>
 
-          눈부신 해변과 아름다운 자연환경으로<br>
-          아시아의 진주라고 불리며 태국에서 가장 큰<br>
-          섬이자 태국을 대표하는 관광지 중 한곳이다.<br><br>
+            눈부신 해변과 아름다운 자연환경으로<br>
+            아시아의 진주라고 불리며 태국에서 가장 큰<br>
+            섬이자 태국을 대표하는 관광지 중 한곳이다.<br><br>
 
-          우기와 건기에 따라 바다색깔이 달라지기 때문에<br>
-          기상상황을 잘 확인해야 한다.<br><br>
+            우기와 건기에 따라 바다색깔이 달라지기 때문에<br>
+            기상상황을 잘 확인해야 한다.<br><br>
 
-          푸켓은 11월 부터 2월까지가<br>
-          가장 아름다운 해변을 볼 수 있는 시기이다.<br><br>
-        </td>
-        <td><img src="/images/map.jpg"></td>
-      </tr>
-      <tr>
-        <td><img src="/images/phuketMap.png"></td>
-        <td style="width: 50%; text-align: left; font-size:22px;">
-          푸켓의 공항은 푸켓섬 기준 북쪽에 위치하고 있으며​<br>
-          관광객들이 많이 찾는 리조트의 경우​​<br>
-          대부분이 남쪽에 위치하고있어 택시를 타고​​<br>
-          이동해야 한다.<br><br>
+            푸켓은 11월 부터 2월까지가<br>
+            가장 아름다운 해변을 볼 수 있는 시기이다.<br><br>
+          </td>
+          <td><img src="/images/map.jpg"></td>
+        </tr>
+        <tr>
+          <td><img src="/images/phuketMap.png"></td>
+          <td style="width: 50%; text-align: left; font-size:22px;">
+            푸켓의 공항은 푸켓섬 기준 북쪽에 위치하고 있으며​<br>
+            관광객들이 많이 찾는 리조트의 경우​​<br>
+            대부분이 남쪽에 위치하고있어 택시를 타고​​<br>
+            이동해야 한다.<br><br>
 
-          가장 유명한 해변으로는​​<br>
-          빠통(파통)비치와 까론(카론)비치 이다.<br><br>
-          
-          그 외의 해변가도 이쁘지만 위 2개의 해변이 가장 유명하다.<br><br>
+            가장 유명한 해변으로는​​<br>
+            빠통(파통)비치와 까론(카론)비치 이다.<br><br>
 
-          빠통의 경우 바로 앞 쇼핑센터가 있으며​​<br>
-          그 옆으로는 유흥거리가 도로를 가득 채우고 있어​​<br>
-          관광객들에게 인기가 많다.<br><br>
+            그 외의 해변가도 이쁘지만 위 2개의 해변이 가장 유명하다.<br><br>
 
-          까론의 경우 빠통과는 정 반대로 잔잔하며​​<br>
-          해변가를 즐기기에 최적화되어있는 해변이다.<br><br>
+            빠통의 경우 바로 앞 쇼핑센터가 있으며​​<br>
+            그 옆으로는 유흥거리가 도로를 가득 채우고 있어​​<br>
+            관광객들에게 인기가 많다.<br><br>
 
-          두 해변의 거리가 멀지않아 어느 위치로 숙소로 정하더라도​​<br>
-          무리없이 오갈 수 있을 정도로 가깝다.<br><br>
+            까론의 경우 빠통과는 정 반대로 잔잔하며​​<br>
+            해변가를 즐기기에 최적화되어있는 해변이다.<br><br>
 
-          * 홈주는 까론비치에 있는 리조트로 다녀왔다.<br>
-        </td>
-      </tr>
-    </table>
+            두 해변의 거리가 멀지않아 어느 위치로 숙소로 정하더라도​​<br>
+            무리없이 오갈 수 있을 정도로 가깝다.<br><br>
+
+            * 홈주는 까론비치에 있는 리조트로 다녀왔다.<br>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 </body>
 

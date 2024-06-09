@@ -3,193 +3,194 @@
 <head>
     <title>{{title}}</title>
 
-    
-  <link rel="stylesheet" href="/menu.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div>
-        <a href="/"><img style="float: left;" src="/images/mainPage/Phuket_Logo.png" width="50" height="50"></a>
-
-        {% if user %}
-        <form action="/user/logout" method="post">
-      <input name="url" type="hidden" value="{{_url}}">
-      <button style="width: 120px; float: right;" type="submit">로그아웃</button>
-    </form>
-        {% else %}
-        <form action="/user" method="post">
-      <input name="_url" type="hidden" value="{{_url}}">
-      <button style="width: 120px; float: right;" type="submit">로그인</button>
-    </form>
-        {% endif %}
-
-        <h1>항공편</h1>
-    </div>
-
-    <div class="wrap">
-        <table class="menu" border="0">
-            <tr class="table_cell">
-                <th class="menu_item"><a href="/menu/phuketLocation">
-                        <img style="float: left;" src="/images/topBar/phuketLocation.png" width="50"
-                            height="50"><br><br>푸켓 위치</a></th>
-                <th class="menu_item"><a href="/menu/transInfo"><img style="float: left;"
-                            src="/images/topBar/transport.png" width="50" height="50"><br><br>항공편</a></th>
-                <th class="menu_item"><a href="/menu/accomodation"><img style="float: left;"
-                            src="/images/topBar/accommodation.png" width="50" height="50"><br><br>숙소</a></th>
-                <th class="menu_item"><a href="/menu/tourist"><img style="float: left;" src="/images/topBar/tourist.png"
-                            width="50" height="50"><br><br>관광지</a></th>
-                <th class="menu_item"><a href="/menu/food"><img style="float: left;" src="/images/topBar/food.png"
-                            width="50" height="50"><br><br>음식</a></th>
-                <th class="menu_item"><a href="/menu/preparation"><img style="float: left;"
-                            src="/images/topBar/preparation.png" width="50" height="50"><br><br>준비 사항</a></th>
-                <th class="menu_item"><a href="/menu/board"><img style="float: left;" src="/images/topBar/board.png"
-                            width="50" height="50"><br><br>기타 사항</a></th>
-            </tr>
-        </table>
-    </div>
-
-    <br><br>
-
     <div class="custom-font">
-        <table border="2"
-            style="width: 50%; margin-left: auto; margin-right: auto; text-align: center; font-size: 22px;">
-            <tr>
-                <th>항공사</th>
-                <th>대한항공</th>
-                <th>진에어</th>
-            </tr>
-            <tr>
-                <td>가격</td>
-                <td>50~70만원</td>
-                <td>30~50만원</td>
-            </tr>
-            <tr>
-                <td>비행시간</td>
-                <td>6시간 20분</td>
-                <td>6시간 20분</td>
-            </tr>
-            <tr>
-                <td>탑승시간</td>
-                <td>17:55 -> 22:15</td>
-                <td>17:25 -> 21:45</td>
-            </tr>
-            <tr>
-                <td>기내식</td>
-                <td>O</td>
-                <td>X<br>(별도구매 시 제공)</td>
-            </tr>
-            <tr>
-                <td>좌석</td>
-                <td>비교적 넓음</td>
-                <td>비교적 좁음</td>
-            </tr>
-            <tr>
-                <td>모니터</td>
-                <td>O</td>
-                <td>X</td>
-            </tr>
-            <tr>
-                <td>수화물</td>
-                <td>23kg</td>
-                <td>15kg</td>
-            </tr>
-        </table>
+        <div>
+            <a href="/"><img style="float: left;" src="/images/mainPage/Phuket_Logo.png" width="50" height="50"></a>
+
+            {% if user %}
+            <form action="/user/logout" method="post">
+                <input name="url" type="hidden" value="{{_url}}">
+                <button style="width: 120px; float: right;" type="submit">로그아웃</button>
+            </form>
+            {% else %}
+            <form action="/user" method="post">
+                <input name="_url" type="hidden" value="{{_url}}">
+                <button style="width: 120px; float: right;" type="submit">로그인</button>
+            </form>
+            {% endif %}
+
+            <h1>항공편</h1>
+        </div>
+
+        <div class="wrap">
+            <table class="menu" border="0">
+                <tr class="table_cell">
+                    <th class="menu_item"><a href="/menu/phuketLocation">
+                            <img style="float: left;" src="/images/topBar/phuketLocation.png" width="50"
+                                height="50"><br><br>푸켓 위치</a></th>
+                    <th class="menu_item"><a href="/menu/transInfo"><img style="float: left;"
+                                src="/images/topBar/transport.png" width="50" height="50"><br><br>항공편</a></th>
+                    <th class="menu_item"><a href="/menu/accomodation"><img style="float: left;"
+                                src="/images/topBar/accommodation.png" width="50" height="50"><br><br>숙소</a></th>
+                    <th class="menu_item"><a href="/menu/tourist"><img style="float: left;"
+                                src="/images/topBar/tourist.png" width="50" height="50"><br><br>관광지</a></th>
+                    <th class="menu_item"><a href="/menu/food"><img style="float: left;" src="/images/topBar/food.png"
+                                width="50" height="50"><br><br>음식</a></th>
+                    <th class="menu_item"><a href="/menu/preparation"><img style="float: left;"
+                                src="/images/topBar/preparation.png" width="50" height="50"><br><br>준비 사항</a></th>
+                    <th class="menu_item"><a href="/menu/board"><img style="float: left;" src="/images/topBar/board.png"
+                                width="50" height="50"><br><br>기타 사항</a></th>
+                </tr>
+            </table>
+        </div>
+
+        <br><br>
+
+        <div>
+            <table border="2"
+                style="width: 50%; margin-left: auto; margin-right: auto; text-align: center; font-size: 22px;">
+                <tr>
+                    <th>항공사</th>
+                    <th>대한항공</th>
+                    <th>진에어</th>
+                </tr>
+                <tr>
+                    <td>가격</td>
+                    <td>50~70만원</td>
+                    <td>30~50만원</td>
+                </tr>
+                <tr>
+                    <td>비행시간</td>
+                    <td>6시간 20분</td>
+                    <td>6시간 20분</td>
+                </tr>
+                <tr>
+                    <td>탑승시간</td>
+                    <td>17:55 -> 22:15</td>
+                    <td>17:25 -> 21:45</td>
+                </tr>
+                <tr>
+                    <td>기내식</td>
+                    <td>O</td>
+                    <td>X<br>(별도구매 시 제공)</td>
+                </tr>
+                <tr>
+                    <td>좌석</td>
+                    <td>비교적 넓음</td>
+                    <td>비교적 좁음</td>
+                </tr>
+                <tr>
+                    <td>모니터</td>
+                    <td>O</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>수화물</td>
+                    <td>23kg</td>
+                    <td>15kg</td>
+                </tr>
+            </table>
+        </div>
+
+        <br><br>
+
+        <div class="wrap">
+            <table class="menu" style="width: 60%; margin-left: auto; margin-right: auto;">
+                <tr class="table_cell">
+                    <th class="menu_item"><a href="https://www.koreanair.com/booking/search?hl=ko">
+                            <img style="float: left;" src="/images/transport/koreanAir.png" width="50"
+                                height="50"><br><br>대한항공<br>예약페이지</a>
+                    </th>
+                    <th class="menu_item"><a
+                            href="https://www.jinair.com/booking/index?snsLang=ko_KR&ctrCd=KOR&ch=EZWELFARE">
+                            <img style="float: left;" src="/images/transport/jinAir.png" width="50"
+                                height="50"><br>진에어<br>예약페이지</a>
+                    </th>
+                </tr>
+            </table>
+        </div>
+
+        <br><br>
+
+        <details class="sentence">
+            <summary>고려사항</summary>
+            <p>
+                동남아의 모든 곳이 그렇듯 푸켓도 우기와 건기가 존재하기에​<br>
+                비수기 성수기는 우기와 건기에 맞춰서 나뉘어 있습니다.<br><br>
+
+                푸켓의 우기는 5월 ~ 10월 건기는 11월 ~ 4월로 매년 비슷하게 찾아옵니다.<br><br>
+
+                여행을 준비하는 입장에서는 비가 오는 우기보다는 건기가 더 좋을 순 있지만​<br>
+                모두가 건기에만 여행을 갈 수 있는건 아니니 한가지 말씀드리자면​<br><br>
+
+                우기라고해서 하루종일 비가오고 매일 비가오는 건 아니고​<br>
+                비교적 자주오지만 한국처럼 오랫동안 내리는 비가 아니라 한번에 쏟아지고​<br>
+                다시 잠잠해지는 소나기형식의 비가 보통 10~20분정도 내립니다.<br><br>
+
+                때문에 건기와 우기를 크게 걱정하시면서 여행일정을 잡지 않으셔도 될 같습니다.<br>
+            </p>
+        </details>
+
+        <br><br>
+
+        <details class="sentence">
+            <summary>항공편</summary>
+            <p>
+                항공편은 대표적으로 대한항공, 진에어, 중국동방항공, 타이에어아시아, 비엣젯항공 등이 있습니다.<br>
+                다만 여기서 추천드릴 항공사는 대한항공과 진에어 뿐입니다.<br><br>
+
+                물론 푸켓에 가는 경로는 많고 많겠지만 대한항공과 진에어를 제외한 나머지 항공사들은​<br>
+                대부분 경유를 끼고있고 직항보다 가격은 저렴하겠지만 비행시간이 엄청나게 차이가 납니다.<br><br>
+
+                경유를 하게되면 보통 12시간에서 길면 18시간 이상 걸리지만​<br>
+                직항으로 선택하시면 6시간 30분이면 푸켓까지 갈 수 있습니다.<br><br>
+
+                여행의 가장 큰 비중을 차지하는 항공편의 가격을 저렴하게 하길 원하신다면​<br>
+                경우를 택하셔도 문제는 없겠지만 시간적으로 너무 손해이기 때문에 추천드리지 않습니다.<br><br>
+
+                저는 진에어를 이용했고 세금 및 모든 요금 포함 항공권은 1인당 33만원이었습니다.<br>
+                찾아보셨다면 아시겠지만 경유를 하더라도 비슷비슷한 금액을 보셨을 겁니다.<br><br>
+
+                최저가 기준으로 진에어는 왕복 30~50만원 대한항공은 왕복 50~70만원 입니다.<br>
+            </p>
+        </details>
+
+        <br><br>
+
+        <details class="sentence">
+            <summary>공동 운항 정보</summary>
+            <p>
+                예매 시 주의할 점은 대한항공 예매 페이지에서 공동운항으로 진에어를 고를 수 있다는 점 입니다.<br>
+                물론 공동운항이 좀 더 저렴합니다.<br><br>
+
+                공동운항을 이용하시면 비행기자체는 진에어이기 때문에 진에어를 예약했다고 생각하시면 됩니다.<br>
+                차이점은 모니터가 없고, 기내식은 샌드위치가 제공되며, 음료는 물만 무료입니다.이 밖에도 담요와 슬리퍼는 제공되지 않습니다.<br>
+                이렇게 대한항공에 비해서 모자라는 부분만 있지만 가격은 더 저렴하고 마일리지가 적립됩니다.<br>
+                사실 공동운항으로 예약할 때 진에어보다 저렴한 경우가 있는데 그 경우가 아니라면 진에어를 추천드립니다.<br>
+            </p>
+        </details>
+
+        <br><br>
+
+        <details class="sentence">
+            <summary>푸켓공항 팁</summary>
+            <p>
+            <ul>
+                <li>푸켓공항 1층 생각보다 좁아서 앉을 데 없어요 2층이 훨씬 넓어서 편하실거에요.</li>
+                <li>약국은 2층에 가운데 하늘다리같은데 있어요.</li>
+                <li>물은 못들고가서 사드셔야 하는데 에비앙밖에 안팔아요 다른거 찾으셔도 없습니다..(경험담)</li>
+                <li>공항내부 추우니까 얇은외투 하나 들고 들어가세요.</li>
+            </ul>
+            </p>
+        </details>
     </div>
-
-    <br><br>
-
-    <div class="wrap custom-font">
-        <table class="menu" style="width: 60%; margin-left: auto; margin-right: auto;">
-            <tr class="table_cell">
-                <th class="menu_item"><a href="https://www.koreanair.com/booking/search?hl=ko">
-                        <img style="float: left;" src="/images/transport/koreanAir.png" width="50"
-                            height="50"><br><br>대한항공<br>예약페이지</a>
-                </th>
-                <th class="menu_item"><a
-                        href="https://www.jinair.com/booking/index?snsLang=ko_KR&ctrCd=KOR&ch=EZWELFARE">
-                        <img style="float: left;" src="/images/transport/jinAir.png" width="50"
-                            height="50"><br>진에어<br>예약페이지</a>
-                </th>
-            </tr>
-        </table>
-    </div>
-
-    <br><br>
-
-    <details class="sentence">
-        <summary>고려사항</summary>
-        <p>
-            동남아의 모든 곳이 그렇듯 푸켓도 우기와 건기가 존재하기에​<br>
-            비수기 성수기는 우기와 건기에 맞춰서 나뉘어 있습니다.<br><br>
-
-            푸켓의 우기는 5월 ~ 10월 건기는 11월 ~ 4월로 매년 비슷하게 찾아옵니다.<br><br>
-
-            여행을 준비하는 입장에서는 비가 오는 우기보다는 건기가 더 좋을 순 있지만​<br>
-            모두가 건기에만 여행을 갈 수 있는건 아니니 한가지 말씀드리자면​<br><br>
-
-            우기라고해서 하루종일 비가오고 매일 비가오는 건 아니고​<br>
-            비교적 자주오지만 한국처럼 오랫동안 내리는 비가 아니라 한번에 쏟아지고​<br>
-            다시 잠잠해지는 소나기형식의 비가 보통 10~20분정도 내립니다.<br><br>
-
-            때문에 건기와 우기를 크게 걱정하시면서 여행일정을 잡지 않으셔도 될 같습니다.<br>
-        </p>
-    </details>
-
-    <br><br>
-
-    <details class="sentence">
-        <summary>항공편</summary>
-        <p>
-            항공편은 대표적으로 대한항공, 진에어, 중국동방항공, 타이에어아시아, 비엣젯항공 등이 있습니다.<br>
-            다만 여기서 추천드릴 항공사는 대한항공과 진에어 뿐입니다.<br><br>
-
-            물론 푸켓에 가는 경로는 많고 많겠지만 대한항공과 진에어를 제외한 나머지 항공사들은​<br>
-            대부분 경유를 끼고있고 직항보다 가격은 저렴하겠지만 비행시간이 엄청나게 차이가 납니다.<br><br>
-
-            경유를 하게되면 보통 12시간에서 길면 18시간 이상 걸리지만​<br>
-            직항으로 선택하시면 6시간 30분이면 푸켓까지 갈 수 있습니다.<br><br>
-
-            여행의 가장 큰 비중을 차지하는 항공편의 가격을 저렴하게 하길 원하신다면​<br>
-            경우를 택하셔도 문제는 없겠지만 시간적으로 너무 손해이기 때문에 추천드리지 않습니다.<br><br>
-
-            저는 진에어를 이용했고 세금 및 모든 요금 포함 항공권은 1인당 33만원이었습니다.<br>
-            찾아보셨다면 아시겠지만 경유를 하더라도 비슷비슷한 금액을 보셨을 겁니다.<br><br>
-
-            최저가 기준으로 진에어는 왕복 30~50만원 대한항공은 왕복 50~70만원 입니다.<br>
-        </p>
-    </details>
-
-    <br><br>
-
-    <details class="sentence">
-        <summary>공동 운항 정보</summary>
-        <p>
-            예매 시 주의할 점은 대한항공 예매 페이지에서 공동운항으로 진에어를 고를 수 있다는 점 입니다.<br>
-            물론 공동운항이 좀 더 저렴합니다.<br><br>
-
-            공동운항을 이용하시면 비행기자체는 진에어이기 때문에 진에어를 예약했다고 생각하시면 됩니다.<br>
-            차이점은 모니터가 없고, 기내식은 샌드위치가 제공되며, 음료는 물만 무료입니다.이 밖에도 담요와 슬리퍼는 제공되지 않습니다.<br>
-            이렇게 대한항공에 비해서 모자라는 부분만 있지만 가격은 더 저렴하고 마일리지가 적립됩니다.<br>
-            사실 공동운항으로 예약할 때 진에어보다 저렴한 경우가 있는데 그 경우가 아니라면 진에어를 추천드립니다.<br>
-        </p>
-    </details>
-
-    <br><br>
-
-    <details class="sentence">
-        <summary>푸켓공항 팁</summary>
-        <p>
-        <ul>
-            <li>푸켓공항 1층 생각보다 좁아서 앉을 데 없어요 2층이 훨씬 넓어서 편하실거에요.</li>
-            <li>약국은 2층에 가운데 하늘다리같은데 있어요.</li>
-            <li>물은 못들고가서 사드셔야 하는데 에비앙밖에 안팔아요 다른거 찾으셔도 없습니다..(경험담)</li>
-            <li>공항내부 추우니까 얇은외투 하나 들고 들어가세요.</li>
-        </ul>
-        </p>
-    </details>
 
     <br><br><br><br><br><br>
 </body>

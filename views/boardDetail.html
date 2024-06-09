@@ -4,7 +4,7 @@
 <head>
   <title>{{title}}</title>
 
-  
+
   <link rel="stylesheet" href="/menu.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,86 +12,88 @@
 </head>
 
 <body>
-  <div>
-    <a href="/"><img style="float: left;" src="/images/mainPage/Phuket_Logo.png" width="50" height="50"></a>
+  <div class="custom-font">
+    <div>
+      <a href="/"><img style="float: left;" src="/images/mainPage/Phuket_Logo.png" width="50" height="50"></a>
 
-    {% if user %}
-    <form action="/user/logout" method="post">
-      <input name="url" type="hidden" value="{{_url}}">
-      <button style="width: 120px; float: right;" type="submit">로그아웃</button>
-    </form>
-    {% else %}
-    <form action="/user" method="post">
-      <input name="_url" type="hidden" value="{{_url}}">
-      <button style="width: 120px; float: right;" type="submit">로그인</button>
-    </form>
-    {% endif %}
+      {% if user %}
+      <form action="/user/logout" method="post">
+        <input name="url" type="hidden" value="{{_url}}">
+        <button style="width: 120px; float: right;" type="submit">로그아웃</button>
+      </form>
+      {% else %}
+      <form action="/user" method="post">
+        <input name="_url" type="hidden" value="{{_url}}">
+        <button style="width: 120px; float: right;" type="submit">로그인</button>
+      </form>
+      {% endif %}
 
-    <h1>{{board.title}}</h1>
-  </div>
+      <h1>{{board.title}}</h1>
+    </div>
 
-  <br><br>
-
-  <div>
-    <form action="/menu/board" method="get">
-      <button style="width: 120px; float: left;" type="submit">뒤로 가기</button>
-    </form>
-  </div>
-
-  <br><br>
-
-  <div class="sentence">
-    {% if user %}
-    <form action="" method="post">
-      <button style="width: 120px; float: right;" type="submit">게시글 삭제</button>
-    </form>
-    {% endif %}
-    <br>
-
-    <table border="1" style="width: 100%; min-height: 400px;">
-      <tr>
-        <td>{{board.main}}</td>
-      </tr>
-    </table>
-
-    <br>
+    <br><br>
 
     <div>
-      <form action="/menu/board/comment/{{board.boardId}}" method="post">
-
-        {% if user == undefined %}
-        <input style="width:20%;" type="text" name="guestId" placeholder="비회원 아이디(20자 최대)" required />
-        <input style="width:20%;" type="password" name="password" placeholder="패스워드" required />
-        {% endif %}
-
-        <input style="width:91%; height:100px" type="text" name="comment" placeholder="댓글" required />
-        <input type="hidden" name="boardId" value="{{board.boardId}}">
-        <button style="width:7.8%; height:107px;" type="submit">댓글 등록</button>
+      <form action="/menu/board" method="get">
+        <button style="width: 120px; float: left;" type="submit">뒤로 가기</button>
       </form>
     </div>
 
-    <br>
+    <br><br>
 
-    {% if comments.length != 0 %}
-    <table border="1" style="width: 100%; text-align: left; font-size: 17px;">
-      <tr>
-        <th style="width: 15%; text-align: center;">작성자</th>
-        <th style="width: 75%; text-align: center;">댓글</th>
-        <th style="width: 10%; text-align: center;">작성일</th>
-      </tr>
-      {% for comment in comments %}
-      <tr>
-        {% if comment.userId != null %}
-        <td>{{comment.name}} (관리자)</td>
-        {% else %}
-        <td>{{comment.guestId}}</td>
-        {% endif %}
-        <td>{{comment.comment}}</td>
-        <td>{{comment.createdAt}}</td>
-      </tr>
-      {% endfor %}
-    </table>
-    {% endif %}
+    <div class="sentence">
+      {% if user %}
+      <form action="" method="post">
+        <button style="width: 120px; float: right;" type="submit">게시글 삭제</button>
+      </form>
+      {% endif %}
+      <br>
+
+      <table border="1" style="width: 100%; min-height: 400px;">
+        <tr>
+          <td>{{board.main}}</td>
+        </tr>
+      </table>
+
+      <br>
+
+      <div>
+        <form action="/menu/board/comment/{{board.boardId}}" method="post">
+
+          {% if user == undefined %}
+          <input style="width:20%;" type="text" name="guestId" placeholder="비회원 아이디(20자 최대)" required />
+          <input style="width:20%;" type="password" name="password" placeholder="패스워드" required />
+          {% endif %}
+
+          <input style="width:91%; height:100px" type="text" name="comment" placeholder="댓글" required />
+          <input type="hidden" name="boardId" value="{{board.boardId}}">
+          <button style="width:7.8%; height:107px;" type="submit">댓글 등록</button>
+        </form>
+      </div>
+
+      <br>
+
+      {% if comments.length != 0 %}
+      <table border="1" style="width: 100%; text-align: left; font-size: 17px;">
+        <tr>
+          <th style="width: 15%; text-align: center;">작성자</th>
+          <th style="width: 75%; text-align: center;">댓글</th>
+          <th style="width: 10%; text-align: center;">작성일</th>
+        </tr>
+        {% for comment in comments %}
+        <tr>
+          {% if comment.userId != null %}
+          <td>{{comment.name}} (관리자)</td>
+          {% else %}
+          <td>{{comment.guestId}}</td>
+          {% endif %}
+          <td>{{comment.comment}}</td>
+          <td>{{comment.createdAt}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% endif %}
+    </div>
   </div>
 
   <br><br><br><br><br><br>
