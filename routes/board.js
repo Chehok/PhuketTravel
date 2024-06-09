@@ -72,8 +72,6 @@ router.route('/:boardId')
                     }
                 })
 
-                console.log(comments[0].dataValues)
-
                 res.render('boardDetail', {
                     title: require('../package.json').name,
                     port: process.env.PORT,
