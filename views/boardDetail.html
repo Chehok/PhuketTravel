@@ -28,7 +28,11 @@
 
   <br><br>
 
-  <a href="/menu/board">뒤로 가기</a>
+  <div>
+    <form action="/menu/board" method="get">
+      <button style="width: 120px; float: left;" type="submit">뒤로 가기</button>
+    </form>
+  </div>
 
   <br><br>
 
@@ -66,14 +70,20 @@
 
     {% if comments.length != 0 %}
     <table border="1" style="width: 100%; text-align: left; font-size: 17px;">
+      <tr>
+        <th style="width: 15%; text-align: center;">작성자</th>
+        <th style="width: 75%; text-align: center;">댓글</th>
+        <th style="width: 10%; text-align: center;">작성일</th>
+      </tr>
       {% for comment in comments %}
       <tr>
-        {% if comment.userId %}
-        <td>작성자(관리자): {{comment.User.dataValues.name}}</td>
+        {% if comment.userId != null %}
+        <td>{{comment.name}} (관리자)</td>
         {% else %}
-        <td>작성자: {{comment.guestId}}</td>
+        <td>{{comment.guestId}}</td>
         {% endif %}
-        <td style="width: 80%">내용: {{comment.comment}}</td>
+        <td>{{comment.comment}}</td>
+        <td>{{comment.createdAt}}</td>
       </tr>
       {% endfor %}
     </table>

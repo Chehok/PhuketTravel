@@ -15,8 +15,14 @@ router.route('/')
             res.render('board', {
                 title: require('../package.json').name,
                 port: process.env.PORT,
-                
-                boards: boards.map(v => v),
+                boards: boards.map(v => ({
+                    boardId: v.dataValues.boardId,
+                    title: v.dataValues.title,
+                    createdAt:
+                        `${v.dataValues.createdAt.getFullYear()}-` +
+                        ((v.dataValues.createdAt.getMonth() + 1).toString().length == 1 ? `0${(v.dataValues.createdAt.getMonth() + 1)}-` : `${(v.dataValues.createdAt.getMonth() + 1)}-`) +
+                        (v.dataValues.createdAt.getDate().toString().length == 1 ? `0${(v.dataValues.createdAt.getDate())}` : `${(v.dataValues.createdAt.getDate())}`)
+                })),
             });
         } catch (err) {
             console.error(err);
@@ -29,7 +35,7 @@ router.route('/post')
         res.render('postBoard', {
             title: require('../package.json').name,
             port: process.env.PORT,
-            
+
         });
     })
     .post(isLoggedIn, async (req, res, next) => {
@@ -66,12 +72,22 @@ router.route('/:boardId')
                     }
                 })
 
+                console.log(comments[0].dataValues)
+
                 res.render('boardDetail', {
                     title: require('../package.json').name,
                     port: process.env.PORT,
-                    
                     board,
-                    comments
+                    // comments
+                    comments: comments.map(v => ({
+                        userId: v.dataValues.userId,
+                        name: v.User ? v.User.dataValues.name : "",
+                        guestId: v.dataValues.guestId,
+                        comment: v.dataValues.comment,
+                        createdAt: `${v.dataValues.createdAt.getFullYear()}-` +
+                            ((v.dataValues.createdAt.getMonth() + 1).toString().length == 1 ? `0${(v.dataValues.createdAt.getMonth() + 1)}-` : `${(v.dataValues.createdAt.getMonth() + 1)}-`) +
+                            (v.dataValues.createdAt.getDate().toString().length == 1 ? `0${(v.dataValues.createdAt.getDate())}` : `${(v.dataValues.createdAt.getDate())}`)
+                    }))
                 });
             }
             else {
