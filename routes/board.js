@@ -15,7 +15,7 @@ router.route('/')
             res.render('board', {
                 title: require('../package.json').name,
                 port: process.env.PORT,
-                user: req.user,
+                
                 boards: boards.map(v => v),
             });
         } catch (err) {
@@ -29,7 +29,7 @@ router.route('/post')
         res.render('postBoard', {
             title: require('../package.json').name,
             port: process.env.PORT,
-            user: req.user,
+            
         });
     })
     .post(isLoggedIn, async (req, res, next) => {
@@ -66,12 +66,10 @@ router.route('/:boardId')
                     }
                 })
 
-                console.log(comments[3].User.dataValues.name)
-
                 res.render('boardDetail', {
                     title: require('../package.json').name,
                     port: process.env.PORT,
-                    user: req.user,
+                    
                     board,
                     comments
                 });

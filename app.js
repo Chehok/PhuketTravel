@@ -71,23 +71,18 @@ app.use(passport.initialize());
 //req.session 객체에 passport 정보를 저장함.
 app.use(passport.session()); // 세션 객체에 유저정보를 저장해주는 일
 
+app.use((req, res, next) => {
+    res.locals._url = req.url;
+    res.locals.user = req.user;
+    next();
+})
+
 // 각 주소에 해당하는 라우터로 넘김
 app.use('/user', userRouter);
 app.use('/menu', menuRouter);
 app.use('/menu/board', boardRouter);
 
 app.use(async (req, res, next) => {
-    // try {
-    //     if (req.user) {
-    //         const profile = await Profile.findOne({
-    //             where: { userId: req.user.userId }
-    //         });
-    //         res.locals.profile = profile;
-    //     }
-    // } catch (err) {
-    //     console.error(err)
-    //     next(err);
-    // }
     res.locals.title = require('./package.json').name;
     res.locals.port = app.get('port');
     res.locals.user = req.user;

@@ -38,10 +38,11 @@ router.route('/sign-up')
         }
     });
 
-router.get('/', (_, res) => {
+router.post('/', (req, res) => {
     res.render('login', {
         title: require('../package.json').name,
-        port: process.env.PORT
+        port: process.env.PORT,
+        url: req.body._url
     });
 })
 
@@ -51,9 +52,8 @@ router.post('/login', (req, res, next) => {
     // authenticate에 전달되는 값이 'local'이면 -> 일반 로그인이다.(로컬 전략)
     // 로컬 전략을 실행하다라는 의미 => passport/index.js를 호출한 후, local()을 호출하여 passport/local.js를 호출한다.
     passport.authenticate('local', (authError, user, info) => {
-        if (user) req.login(user, loginError => res.redirect('/'));
+        if (user) req.login(user, loginError => res.redirect(`${req.body.url}`));
         else  {
-            // alert('아이디 혹은 비밀번호가 틀렸습니다.')  
             next(info);
         }
     })(req, res, next);
@@ -61,11 +61,11 @@ router.post('/login', (req, res, next) => {
 
 // 로그아웃
 // /user/logout
-router.get('/logout', (req, res, next) => {
+router.post('/logout', (req, res, next) => {
     req.logout((err) => {
         if (err) return next(err);
         req.session.destroy();
-        res.redirect('/');
+        res.redirect(`${req.body.url}`);
     });
 });
 

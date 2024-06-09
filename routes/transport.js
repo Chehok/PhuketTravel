@@ -7,7 +7,7 @@
 // router.route('/info')
 //     .get((req, res, next) => {
 //         res.render('transInfo', {
-//             user: req.user,
+//             
 //             title: require('../package.json').name,
 //             port: process.env.PORT
 //         });
@@ -16,7 +16,7 @@
 // router.route('/post')
 //     .get((req, res, next) => {
 //         res.render('postTransInfo', {
-//             user: req.user, // 로그인 기능 추가
+//              // 로그인 기능 추가
 //             title: require('../package.json').name,
 //             port: process.env.PORT
 //         });

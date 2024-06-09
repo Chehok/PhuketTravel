@@ -8,7 +8,7 @@ router.route('/phuketLocation')
         res.render('phuketLocation', {
             title: require('../package.json').name,
             port: process.env.PORT,
-            user: req.user
+            
         });
     })
 
@@ -18,7 +18,7 @@ router.route('/transInfo')
         res.render('transInfo', {
             title: require('../package.json').name,
             port: process.env.PORT,
-            user: req.user
+            
         });
     })
 
@@ -28,7 +28,7 @@ router.route('/accomodation')
         res.render('accomodation', {
             title: require('../package.json').name,
             port: process.env.PORT,
-            user: req.user
+            
         });
     })
 
@@ -38,7 +38,7 @@ router.route('/tourist')
         res.render('tourist', {
             title: require('../package.json').name,
             port: process.env.PORT,
-            user: req.user
+            
         });
     })
 
@@ -48,7 +48,7 @@ router.route('/food')
         res.render('food', {
             title: require('../package.json').name,
             port: process.env.PORT,
-            user: req.user
+            
         });
     })
 
@@ -58,7 +58,7 @@ router.route('/preparation')
         res.render('preparation', {
             title: require('../package.json').name,
             port: process.env.PORT,
-            user: req.user
+            
         });
     })
 

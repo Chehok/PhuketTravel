@@ -11,9 +11,15 @@
         <a href="/"><img style="float: left;" src="/images/mainPage/Phuket_Logo.png" width="50" height="50"></a>
 
         {% if user %}
-        <a style="float: right;" href="/user/logout">로그아웃</a><br>
+        <form action="/user/logout" method="post">
+      <input name="url" type="hidden" value="{{_url}}">
+      <button style="width: 120px; float: right;" type="submit">로그아웃</button>
+    </form>
         {% else %}
-        <a style="float: right;" href="/user">로그인</a>
+        <form action="/user" method="post">
+      <input name="_url" type="hidden" value="{{_url}}">
+      <button style="width: 120px; float: right;" type="submit">로그인</button>
+    </form>
         {% endif %}
 
         <h1>관광지</h1>

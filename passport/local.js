@@ -11,12 +11,12 @@ module.exports = () => {
     idField: 'id',
     passwordField: 'password'
   }, async (id, password, done) => {
-    console.log(id, password)
+    // console.log(id, password)
 
     try {
       const user = await User.findOne({ where: { id } });
       // id에 해당하는 user 객체가 있으면
-      console.log(user)
+      // console.log(user)
       if (user) {
         const result = await bcrypt.compare(password, user.password);
         // 로그인 성공! -> 유저 정보를 2번째 인자로 전달 (req, res, next)
